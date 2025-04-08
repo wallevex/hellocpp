@@ -13,6 +13,7 @@ FetchContent_MakeAvailable(SFML)
 
 add_executable(hellocpp main.cpp)
 
-target_include_directories(hellocpp PRIVATE ${CMAKE_SOURCE_DIR} ${SFML_INCLUDE_DIR})
+target_include_directories(hellocpp PUBLIC ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(hellocpp PRIVATE ${CMAKE_SOURCE_DIR}/third_party ${SFML_INCLUDE_DIR})
 
 target_link_libraries(hellocpp PRIVATE SFML::Graphics SFML::Audio SFML::Network)
